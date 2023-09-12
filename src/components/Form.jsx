@@ -7,6 +7,7 @@ import {
 } from "@fluentui/react-components";
 import { useState } from "react";
 import { EditDate } from "./EditDate.tsx";
+import { Checkmark24Regular } from "@fluentui/react-icons";
 
 const Form = (props) => {
     // let fieldObj = {};
@@ -122,8 +123,8 @@ const Form = (props) => {
                         </Field>
                     </div>
                     <div>
-                        <Button type="submit" appearance="primary">
-                            Submit
+                        <Button type="submit" appearance="primary" icon={<Checkmark24Regular />}>
+                            {props.btnMsg ? props.btnMsg : "Submit"}
                         </Button>
                         &nbsp;&nbsp;
                         <Button onClick={props?.cancel}>Cancel</Button>

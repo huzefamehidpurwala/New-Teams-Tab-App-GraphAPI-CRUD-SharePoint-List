@@ -19,7 +19,7 @@ export async function Read(callbackFn) {
 }
 
 export async function Delete(id) {
-    if (window.confirm("Sure Delete!")) {
+    if (window.confirm("Sure Delete?")) {
         await axios
             .delete(
                 `https://graph.microsoft.com/v1.0/sites/607af17b-3466-43ec-8d7b-1047efcf6a27/lists/ed863f13-0229-4832-9770-98ed8dbcad1d/items/${id}`,
@@ -47,26 +47,28 @@ export async function Update(id, data) {
     // alert("HandleDelete " + msg);
     // console.log("HandleDelete ", msg);
 
-    await axios
-        .patch(
-            `https://graph.microsoft.com/v1.0/sites/607af17b-3466-43ec-8d7b-1047efcf6a27/lists/ed863f13-0229-4832-9770-98ed8dbcad1d/items/${id}/fields`,
-            { ...data },
-            {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            }
-        )
-        .then((response) => {
-            if (response.status === 200) {
-                // setShowEdit(!showEdit);
-                alert("successful update");
-            } else {
-                alert("update failed");
-            }
-        });
+    if (window.confirm("Sure Update?")) {
+        await axios
+            .patch(
+                `https://graph.microsoft.com/v1.0/sites/607af17b-3466-43ec-8d7b-1047efcf6a27/lists/ed863f13-0229-4832-9770-98ed8dbcad1d/items/${id}/fields`,
+                { ...data },
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`,
+                    },
+                }
+            )
+            .then((response) => {
+                if (response.status === 200) {
+                    // setShowEdit(!showEdit);
+                    alert("successful update");
+                } else {
+                    alert("update failed");
+                }
+            });
 
-    window.location.reload();
+        window.location.reload();
+    }
 }
 
 export async function Create(id, data) {

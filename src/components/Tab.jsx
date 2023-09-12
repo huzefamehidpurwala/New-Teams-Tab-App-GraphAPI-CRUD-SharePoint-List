@@ -365,6 +365,11 @@ export default function Tab() {
                             <Form
                                 fieldObj={fieldObj}
                                 submitAct={passCreate ? Create : Update}
+                                btnMsg={
+                                    passCreate
+                                        ? "Create New Record"
+                                        : "Update the Record"
+                                }
                                 cancel={() => {
                                     setId("null");
                                     setDisplayForm(false);
