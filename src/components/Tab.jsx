@@ -88,6 +88,7 @@ export default function Tab() {
     }, [dataList, currentPage, rowsPerPage, searchKeyword]);
 
     useEffect(() => {
+        setLoading(true);
         Read((response) => setDataList(response));
     }, []);
 
