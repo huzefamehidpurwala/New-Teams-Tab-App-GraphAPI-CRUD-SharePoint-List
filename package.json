@@ -6,7 +6,9 @@
   },
   "private": true,
   "dependencies": {
+    "@azure/msal": "^1.4.5",
     "@azure/msal-browser": "^3.1.0",
+    "@azure/msal-node": "^2.1.0",
     "@fluentui/react-components": "^9.18.0",
     "@fluentui/react-datepicker-compat": "^0.3.9",
     "@fluentui/react-icons": "^2.0.214",

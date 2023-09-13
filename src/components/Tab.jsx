@@ -77,10 +77,10 @@ export default function Tab() {
             setTotalNumOfPages(arr?.length / rowsPerPage);
         }
 
-        setTimeout(() => {
-            setLoading(false);
-        }, 2000);
-        // setLoading(false);
+        // setTimeout(() => {
+        //     setLoading(false);
+        // }, 2000);
+        setLoading(false);
     };
 
     useEffect(() => {
