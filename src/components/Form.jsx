@@ -66,6 +66,7 @@ const Form = (props) => {
                         {/* {console.log("in the ruturn finc ->", empName)} */}
                         <Field label={"Enter Name:"} required>
                             <Input
+                            placeholder="Enter Employee Name"
                                 type="text"
                                 // defaultValue={empName}
                                 value={empName}
@@ -75,6 +76,7 @@ const Form = (props) => {
 
                         <Field label={"Enter Salary:"}>
                             <Input
+                            placeholder="Enter Employee Salary"
                                 type="number"
                                 value={empSalary}
                                 onChange={(e) => setEmpSalary(e.target.value)}

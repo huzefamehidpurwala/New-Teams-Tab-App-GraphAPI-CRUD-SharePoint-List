@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// * accessToken from oauth2 technology.
 const accessToken = sessionStorage.getItem("accessToken");
 
 export async function Read(callbackFn) {
